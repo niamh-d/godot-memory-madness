@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MemoryMadness"
-run/main_scene="res://scenes/image_filler/image_filler.tscn"
+run/main_scene="res://scenes/master/master.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 
 [autoload]
