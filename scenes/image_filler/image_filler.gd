@@ -11,5 +11,5 @@ func _ready() -> void:
 		var files: PackedStringArray = dir.get_files()
 		
 		for fn in files:
-			ifl.add_filename(PATH + fn)
+			ifl.add_filepath(PATH + fn)
 	ResourceSaver.save(ifl, "res://resources/image_files_list.tres")

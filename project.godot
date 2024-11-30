@@ -14,6 +14,10 @@ config/name="MemoryMadness"
 run/main_scene="res://scenes/image_filler/image_filler.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 
+[autoload]
+
+ImageManager="*res://singletons/image_manager.gd"
+
 [display]
 
 window/size/viewport_width=1024
