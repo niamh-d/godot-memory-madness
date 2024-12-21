@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.3", "Mobile")
 
 ImageManager="*res://singletons/image_manager.gd"
 GameManager="*res://singletons/game_manager.gd"
+SignalManager="*res://singletons/signal_manager.gd"
 
 [display]
 
