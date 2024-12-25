@@ -1,6 +1,7 @@
 extends Control
 
 @onready var tc: GridContainer = $HB/MC/TC
+@onready var scorer: Scorer = $Scorer
 
 const MEMORY_TILE = preload("res://scenes/memory_tile/memory_tile.tscn")
 
@@ -20,6 +21,8 @@ func on_lvl_selected(lvl_num: int) -> void:
 	
 	for im in lvl_data.get_selected_level_images():
 		add_memory_tile(im, frame)
+	
+	scorer.clear_new_game(lvl_data.get_num_target_pairs())
 	
 func _on_exit_button_pressed() -> void:
 	for t in tc.get_children():

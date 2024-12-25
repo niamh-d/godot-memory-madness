@@ -16,11 +16,21 @@ func reveal(r: bool) -> void:
 	frame_image.visible = r
 	item_image.visible = r
 
+func get_item_name() -> String:
+	return _item_name
+
 func setup(image: ItemImage, frame: Texture2D) -> void:
 	frame_image.texture = frame
 	item_image.texture = image.get_texture()
 	_item_name = image.get_item_name()
 	reveal(false)
+
+func matches_other_tile(other: MemoryTile) -> bool:
+	return other != self && other.get_item_name() == _item_name
+
+func kill_on_success() -> void:
+	z_index = 1
+	scale = Vector2.ZERO
 
 func on_selection_enabled() -> void:
 	_can_select_me = true
