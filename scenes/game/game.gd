@@ -2,11 +2,18 @@ extends Control
 
 @onready var tc: GridContainer = $HB/MC/TC
 @onready var scorer: Scorer = $Scorer
+@onready var label_moves: Label = $HB/MC2/VB/HB/LabelMoves
+@onready var label_pairs: Label = $HB/MC2/VB/HB2/LabelPairs
+
 
 const MEMORY_TILE = preload("res://scenes/memory_tile/memory_tile.tscn")
 
 func _ready() -> void:
 	SignalManager.on_lvl_selected.connect(on_lvl_selected)
+
+func _process(delta: float) -> void:
+	label_moves.text = scorer.get_moves_made_str()
+	label_pairs.text = scorer.get_num_pairs_made_str()
 	
 func add_memory_tile(img: ItemImage, frame: Texture2D) -> void:
 		var mt: MemoryTile = MEMORY_TILE.instantiate()
