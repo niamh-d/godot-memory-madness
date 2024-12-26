@@ -4,6 +4,7 @@ extends Control
 @onready var scorer: Scorer = $Scorer
 @onready var label_moves: Label = $HB/MC2/VB/HB/LabelMoves
 @onready var label_pairs: Label = $HB/MC2/VB/HB2/LabelPairs
+@onready var sound: AudioStreamPlayer = $Sound
 
 
 const MEMORY_TILE = preload("res://scenes/memory_tile/memory_tile.tscn")
@@ -34,4 +35,5 @@ func on_lvl_selected(lvl_num: int) -> void:
 func _on_exit_button_pressed() -> void:
 	for t in tc.get_children():
 		t.queue_free()
+	SoundManager.play_button_click(sound)
 	SignalManager.on_game_exit_pressed.emit()
